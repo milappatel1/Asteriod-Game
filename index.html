@@ -1,8 +1,67 @@
-<style>
-    body {
-      margin: 0;
-    }
-  </style>
-  
-  <canvas></canvas>
-  <script src="./index.js"></script>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fish Clicker</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="game-container">
+        <div id="top-bar">
+            <span id="fish-count-display">💰 **Money:** 0</span>
+            <span id="fps-display">🎣 **FPS:** 0.0</span>
+            <span id="fpc-display">👆 **FPC:** 1</span>
+        </div>
+
+        <div id="navigation">
+            <button onclick="showPage('fishing')">🐟 **Fishing**</button>
+            <button onclick="showPage('inventory')">📦 **Inventory**</button>
+            <button onclick="showPage('shop')">🛒 **Shop**</button>
+            <button onclick="showPage('stats')">📊 **Stats**</button>
+        </div>
+
+        <div id="main-content">
+
+            <div class="game-page" id="fishing-page">
+                <div id="fishing-area">
+                    <div id="fishing-hook">?</div>
+                    <p id="catch-status">Press **Cast** to start...</p>
+                    <button id="cast-button" onclick="castLine()">**Cast Line**</button>
+                    <button id="reel-button" onclick="reelIn()" disabled>**Reel In**</button>
+                </div>
+            </div>
+
+            <div class="game-page" id="inventory-page" style="display:none;">
+                <h2>📦 Your Inventory</h2>
+                <button id="sell-all-button" onclick="sellAllFish()">**Sell All Fish**</button>
+                <div id="inventory-list">
+                    </div>
+            </div>
+
+            <div class="game-page" id="shop-page" style="display:none;">
+                <div id="upgrades-list">
+                    <h2>✨ Upgrades (FPC & Efficiency)</h2>
+                    </div>
+                <div id="buildings-list">
+                    <h2>🏗️ Buildings (FPS)</h2>
+                    </div>
+            </div>
+
+            <div class="game-page" id="stats-page" style="display:none;">
+                <h2>📊 Game Statistics</h2>
+                <p>Total Fish Caught: <span id="stat-total-fish">0</span></p>
+                <p>Total Money Earned: <span id="stat-total-money">0</span></p>
+                <p>Total Clicks (Casts/Reels): <span id="stat-total-clicks">0</span></p>
+                <button onclick="saveGame()">💾 **Save Game**</button>
+                <button onclick="resetGame()" style="color: red;">⚠️ **Reset Game**</button>
+            </div>
+
+        </div>
+
+        <div id="notification-area"></div>
+    </div>
+
+    <script src="game.js"></script>
+</body>
+</html>
