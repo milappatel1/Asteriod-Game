@@ -1,0 +1,194 @@
+/* General Styling & Background */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(to bottom, #7dd3fc 0%, #38bdf8 50%, #0c4a6e 100%); /* Ocean gradient */
+    min-height: 100vh;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+}
+
+#game-container {
+    width: 900px;
+    background-color: rgba(0, 0, 0, 0.4);
+    border-radius: 15px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+    padding: 20px;
+}
+
+/* Top Bar Stats */
+#top-bar {
+    display: flex;
+    justify-content: space-around;
+    padding: 10px 0;
+    margin-bottom: 10px;
+    font-size: 1.5em;
+    font-weight: bold;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.3);
+}
+
+/* Navigation */
+#navigation {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 20px;
+}
+
+#navigation button {
+    padding: 10px 20px;
+    font-size: 1.1em;
+    cursor: pointer;
+    background-color: #0d9488;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    transition: background-color 0.2s;
+}
+
+#navigation button:hover {
+    background-color: #0f766e;
+}
+
+/* Main Content & Pages */
+.game-page {
+    min-height: 400px;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+}
+
+/* Fishing Area */
+#fishing-area {
+    text-align: center;
+}
+
+#fishing-hook {
+    font-size: 150px;
+    line-height: 150px;
+    cursor: pointer;
+    margin: 20px auto;
+    width: 200px;
+    height: 200px;
+    border: 5px solid white;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.2);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: transform 0.1s;
+}
+
+#fishing-hook:active {
+    transform: scale(0.95);
+}
+
+#catch-status {
+    font-size: 1.2em;
+    margin-bottom: 15px;
+    height: 20px; /* Reserve space */
+}
+
+#cast-button, #reel-button, #sell-all-button {
+    padding: 10px 25px;
+    font-size: 1.3em;
+    margin: 5px;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+#cast-button { background-color: #10b981; color: white; }
+#reel-button { background-color: #f59e0b; color: white; }
+#sell-all-button { background-color: #ef4444; color: white; margin-bottom: 15px; }
+
+#reel-button:disabled {
+    background-color: #9ca3af;
+    cursor: not-allowed;
+}
+
+
+/* Shop & Inventory */
+#shop-page {
+    display: flex;
+    gap: 20px;
+}
+
+#upgrades-list, #buildings-list {
+    flex: 1;
+}
+
+.item-card {
+    background-color: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.item-info {
+    flex-grow: 1;
+}
+
+.item-info p {
+    margin: 3px 0;
+    font-size: 0.9em;
+}
+
+.item-card button {
+    padding: 8px 15px;
+    margin-left: 10px;
+    background-color: #3b82f6;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.item-card button:disabled {
+    background-color: #4b5563;
+    cursor: not-allowed;
+}
+
+.inventory-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 8px;
+    border-bottom: 1px dashed rgba(255, 255, 255, 0.3);
+}
+
+.inventory-item:last-child {
+    border-bottom: none;
+}
+
+/* Notifications */
+#notification-area {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 1000;
+}
+
+.notification {
+    background-color: #facc15;
+    color: #333;
+    padding: 10px 15px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+    font-weight: bold;
+    opacity: 0;
+    transition: opacity 0.5s ease-out;
+}
+
+.notification.show {
+    opacity: 1;
+}
